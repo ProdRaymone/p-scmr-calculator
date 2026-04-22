@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { RevenueInputs, CostInputs, ThresholdParams, PSCMRResult, HistoryEntry } from "@/lib/types";
 import { DEFAULT_REVENUE, DEFAULT_COST, DEFAULT_THRESHOLD } from "@/lib/constants";
 import { calculatePSCMR, calculateKappaPersonal } from "@/lib/calculator";
@@ -21,13 +21,8 @@ export default function Home() {
   const [cost, setCost] = useState<CostInputs>(DEFAULT_COST);
   const [threshold, setThreshold] = useState<ThresholdParams>(DEFAULT_THRESHOLD);
   const [result, setResult] = useState<PSCMRResult | null>(null);
-  const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [history, setHistory] = useState<HistoryEntry[]>(() => loadHistory());
   const [showResult, setShowResult] = useState(false);
-
-  // Load history on mount
-  useEffect(() => {
-    setHistory(loadHistory());
-  }, []);
 
   const kappa = calculateKappaPersonal(threshold);
 

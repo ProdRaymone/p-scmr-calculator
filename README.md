@@ -4,6 +4,8 @@ P-SCMR Calculator is a small web app for quantifying Personal Silicon-Carbon Met
 
 Live site: [https://p-scmr.top](https://p-scmr.top)
 
+![P-SCMR Calculator screenshot](./public/p-scmr-screenshot.png)
+
 ## What It Does
 
 - Calculates P-SCMR in real time from revenue-side and cost-side inputs
@@ -79,8 +81,17 @@ This project is connected to Vercel and GitHub.
 
 After the GitHub integration is connected, pushing to `main` triggers automatic deployment.
 
+## CI
+
+GitHub Actions runs a lightweight CI workflow on pushes to `main` and on pull requests:
+
+- `npm ci`
+- `npm run lint`
+- `npm run build`
+
 ## Notes
 
 - History is stored locally in the browser, not on a backend
 - CSV import/export is intended for personal analysis workflows
 - The calculator is decision support, not financial or medical advice
+- License: MIT

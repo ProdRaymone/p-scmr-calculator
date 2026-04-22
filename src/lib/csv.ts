@@ -1,5 +1,5 @@
 
-import { HistoryEntry, RevenueInputs, CostInputs, ThresholdParams } from "./types";
+import { HistoryEntry, RevenueInputs, CostInputs } from "./types";
 import { calculatePSCMR, calculateKappaPersonal } from "./calculator";
 import { DEFAULT_THRESHOLD } from "./constants";
 
