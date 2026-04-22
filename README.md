@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# P-SCMR Calculator
 
-## Getting Started
+P-SCMR Calculator is a small web app for quantifying Personal Silicon-Carbon Metabolic Rate: the balance between AI-created value and the real cost of using AI in day-to-day work.
 
-First, run the development server:
+Live site: [https://p-scmr.top](https://p-scmr.top)
+
+## What It Does
+
+- Calculates P-SCMR in real time from revenue-side and cost-side inputs
+- Shows a clear `S / A / B / C / D` rating
+- Visualizes revenue and cost breakdowns
+- Tracks historical results in `localStorage`
+- Supports CSV import and export for personal tracking
+
+## Core Inputs
+
+Revenue side includes:
+
+- Direct monetization from AI output
+- Time saved by AI
+- Asset value created by reusable outputs
+- Quality premium
+- Cross-project or brand synergy
+
+Cost side includes:
+
+- API or token spend
+- Human time spent prompting and correcting
+- Infrastructure cost
+- Drift / retry time
+- Opportunity cost time
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Chart.js
+- Framer Motion
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the default dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If port `3000` is already occupied on your machine, use the dedicated local script:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev:3099
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open:
 
-## Learn More
+- `http://localhost:3000`
+- or `http://localhost:3099`
 
-To learn more about Next.js, take a look at the following resources:
+## Production Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project is connected to Vercel and GitHub.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Production domain: [https://p-scmr.top](https://p-scmr.top)
+- Repository: [https://github.com/ProdRaymone/p-scmr-calculator](https://github.com/ProdRaymone/p-scmr-calculator)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After the GitHub integration is connected, pushing to `main` triggers automatic deployment.
+
+## Notes
+
+- History is stored locally in the browser, not on a backend
+- CSV import/export is intended for personal analysis workflows
+- The calculator is decision support, not financial or medical advice
